@@ -177,12 +177,12 @@ export default function Bills() {
              {/* Add Bill */}
               <Content>
              <Addbill/>
-             <Columnadd>
+             {/* <Columnadd> */}
              <Searchbill/>
              <Position>
              <Deletebill/>
              </Position>
-             </Columnadd>
+             {/* </Columnadd> */}
              </Content>
              </Grid>
             </Grid>        
