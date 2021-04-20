@@ -11,6 +11,8 @@ import Home from './pages/info';
 import React from "react";
 import GetFulltable from './pages/home/customer/report/fullTable'
 import covidVaccine from './pages/home/customer/report/above45'
+import recentcustomers from './pages/home/customer/report/recentcustomers'
+import customercount from './pages/home/customer/report/customerCount'
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
             }}/>
         <Route path = '/customerdata' component={GetFulltable} exact />
         <Route path = '/covidList' component={covidVaccine} exact />
+        <Route path = '/recentcustomers' component={recentcustomers} exact />
+        <Route path = '/customercount' component={customercount} exact />
       </Switch>
     </Router>
   );

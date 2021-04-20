@@ -58,26 +58,42 @@ router.post("/insert/addmed", (req, res) => {
       else{
         this.num=result[0].billno;
         console.log(num);
+        console.log(result);
 
         db.query(
           sql_query_2,
-          [sr_no, this.num, C_ID],
+          [sr_no, this.num, quantity],
           (err, result) => {
             if (err) {
               console.log(err);
-              res.status(400).send("Encountered error");
+              //if(err.errno == 1644) alert('OUT OF STOCK!');
+              res.status(404).send("Encountered error");
             } 
             else {
               if(!result)
                 res.status(404).send("Not Found");
               else{
+                // db.query(
+                //   "update transaction set totalcost=(select sum(subtotal) from ( select quantity*med_cost as subtotal from med,items where med.sr_no=items.sr_no and billno=? ) totalbill) where billno=?",
+                //   [this.num,this.num],
+                //   (err,result) => {
+                //     if (err)
+                //     res.status(400).send("Encountered error");
+                //     else{
+                //       res.status(200).send("Medicine added");
+                //     }
+                //   }
+                // );
                 db.query(
-                  "update transaction set totalcost=(select sum(subtotal) from ( select quantity*med_cost as subtotal from med,items where med.sr_no=items.sr_no and billno=? ) totalbill) where billno=?",
-                  [this.num,this.num],
+                  "CALL calc_total(?)",
+                  this.num,
                   (err,result) => {
-                    if (err)
+                    if (err){
+                      
                     res.status(400).send("Encountered error");
+                    }
                     else{
+                      
                       res.status(200).send("Medicine added");
                     }
                   }
@@ -113,31 +129,29 @@ router.post("/lookup/all", (req, res) => {
 });
 
 
-//display transacions of a single customer ID from db
-router.get("/lookup/billno", (req, res) => {
-
+//display transactions of a single customer ID from db
+router.post("/seachBill", (req, res) => {
   const billno = req.body.billno;
-  if(!C_ID)
+  if(!billno)
   {
-    res.status(400).send("Wrong customer ID");
+    res.status(400).send("Wrong bill ID");
     return;
   }
   
-  const sql_query="select i.billno, totalcost, billdate, C_ID, i.sr_no, med_name, med_cost, quantity from transaction t,items i,med m where t.billno=i.billno and i.sr_no=m.sr_no and C_ID=?";
-
+  const sql_query="select i.billno, totalcost, billdate, C_ID, i.sr_no, med_name, med_cost, quantity from transaction t,items i,med m where t.billno=i.billno and i.sr_no=m.sr_no and i.billno=?";
   db.query(
     sql_query,
-    [C_ID],
+    [billno],
     (err, result) => {
       if (err) {
         console.log(err);
         res.status(400).send("Encountered error, contact admin.");
       } 
       else {
-        if(!result.billno)
-          res.status(404).send("Not Found");
+        if(!result[0].billno)
+          res.status(300).send("Not Found");
         else 
-          res.send(result);
+          res.send(result[0]);
       }
     }
   );
@@ -173,12 +187,10 @@ router.post("/delete",(req,res) => {
 
 
 /*
-
 router.post("/test", (req, res) => {
   
   var C_ID=req.body.C_ID;
   const sql_query="insert into transaction(C_ID) values (?)";
-
   db.query(
     sql_query,
     [C_ID],
@@ -217,4 +229,3 @@ router.post("/insert/submit", (req, res) => {
 
 
 module.exports = router;
-

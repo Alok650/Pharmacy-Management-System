@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import {FormWrap, FormH1del, FormContent, Form, FormInput, FormH1, FormLabel, FormButton} from '../customerStyle'
 import axios from 'axios'
-import Divider from '@material-ui/core/Divider';
 
 const Deletebill = () =>{
     const [billno, setbillno] = useState(0);

@@ -23,7 +23,7 @@ router.post("/create", (req, res) => {
     // }
   
     db.query(
-      "INSERT INTO trial (fname, lname, age,pincode,email, username, password) VALUES (?,?,?,?,?,?,?)",
+      "INSERT INTO customer (fname, lname, age,pincode,email, username, password) VALUES (?,?,?,?,?,?,?)",
       [fname, lname, age,pincode, email, username, password],
       (err, result) => {
         if (err) {

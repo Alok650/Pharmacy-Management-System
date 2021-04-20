@@ -18,7 +18,7 @@ router.post("/forgotpassword", (req, res) => {
     return;
   }
   db.query(
-    "SELECT password FROM trial WHERE email = ? AND pincode = ?", 
+    "SELECT password FROM customer WHERE email = ? AND pincode = ?", 
     [email, pincode],
     (err, result) => {
       if (err) {
@@ -56,7 +56,7 @@ router.post("/reset", (req, res) => {
       return;
     }
     db.query(
-      "UPDATE trial SET password = ? Where email = ? AND pincode = ?", 
+      "UPDATE customer SET password = ? Where email = ? AND pincode = ?", 
       [password, email, pincode],
       (err, result) => {
         if (err) {

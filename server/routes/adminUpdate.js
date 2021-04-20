@@ -24,7 +24,7 @@ router.post("/adminUpdate", (req, res) => {
     return;
   }
   db.query(
-    "SELECT fname, lname, age, pincode, email FROM trial WHERE username = ? AND password = ?", 
+    "SELECT fname, lname, age, pincode, email FROM customer WHERE username = ? AND password = ?", 
     [username, password],
     (err, result) => {
       if (err) {
@@ -66,7 +66,7 @@ router.post("/adminReset", (req, res) => {
       return;
     }
     db.query(
-      "UPDATE trial SET fname = ?, lname = ?, age = ?, pincode = ?, email = ? Where username = ? AND password = ?", 
+      "UPDATE customer SET fname = ?, lname = ?, age = ?, pincode = ?, email = ? Where username = ? AND password = ?", 
       [fname, lname, age, pincode, email, username, password],
       (err, result) => {
         if (err) {

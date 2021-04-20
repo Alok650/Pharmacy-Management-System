@@ -17,8 +17,9 @@ router.post("/authenticate", (req, res) => {
     console.log("Login failed 1")
     return;
   }
+  
   db.query(
-    "SELECT username, password FROM trial WHERE username = ? AND password = ?", 
+    "SELECT username, password FROM customer WHERE username = ? AND password = ?", 
     [username, password],
     (err, result) => {
       if (err) {

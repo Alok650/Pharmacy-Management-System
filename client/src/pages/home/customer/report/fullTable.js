@@ -27,7 +27,7 @@ async componentDidMount() {
   }
 
   renderTableRows = () => {
-    return this.state.users.map(user => {
+    return this.state.users[0].map(user => {
       return (
         <tr key={user.id}>
           <td>{user.fname}</td>
@@ -42,7 +42,7 @@ async componentDidMount() {
     })
   }
 renderTableHeader = () => {
-    return Object.keys(this.state.users[0]).map(attr => <th key={attr}>{attr.toUpperCase()}</th>)
+    return Object.keys(this.state.users[0][0]).map(attr => <th key={attr}>{attr.toUpperCase()}</th>)
   }
 
   
@@ -59,9 +59,10 @@ renderTableHeader = () => {
 
     return users.length > 0
       ? (
+        <div style={{display: 'flex', justifyContent: 'center'}}>
         <table style={{border: "3px solid black",padding: "20px 16px"}}>
           <caption style={{border: "3px solid black",padding: "20px 16px"}}><h1><b>CUSTOMER DETAILS</b></h1>
-          Total records : {users.length}</caption>
+          Total records : {users[0].length}</caption>
           <thead style={{backgroundColor: "#FF416C", border: "1px solid black", color: "white"}}>
             <tr style={{border: "1px solid black", padding: "10px 8px"}}>
               {this.renderTableHeader()}
@@ -71,6 +72,7 @@ renderTableHeader = () => {
             {this.renderTableRows()}
           </tbody>
         </table>
+        </div>
       ) : (
         <div>
           No users.

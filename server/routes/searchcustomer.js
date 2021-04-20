@@ -15,7 +15,7 @@ router.post("/adminsearch", (req, res) => {
     res.status(400).send("Wrong ID");
     return;
   }
-  const sql_query="SELECT * FROM trial where username=?";
+  const sql_query="SELECT * FROM customer where username=?";
 
   db.query(
     sql_query,
@@ -44,7 +44,7 @@ router.post("/admindelete", (req, res) => {
       return;
     }
     db.query(
-      "DELETE FROM trial WHERE username = ?",
+      "DELETE FROM customer WHERE username = ?",
       [username],
       (err, result) => {
         if (err) {
@@ -71,7 +71,7 @@ router.post("/admindelete", (req, res) => {
   });
 
   router.get("/customerList", (req, res) => {
-    db.query("SELECT * FROM trial", (err, result) => {
+    db.query("CALL getCustomerList", (err, result) => {
       if (err) {
         console.log(err);
       } else {
@@ -81,7 +81,7 @@ router.post("/admindelete", (req, res) => {
   });
 
   router.get("/covidList", (req, res) => {
-    db.query("SELECT * FROM trial where age >=45", (err, result) => {
+    db.query("CALL getCovidvaccine", (err, result) => {
       if (err) {
         console.log(err);
       } else {
@@ -90,4 +90,23 @@ router.post("/admindelete", (req, res) => {
     });
   });
 
+  router.get("/recentcustomerslist", (req, res) => {
+    db.query("CALL getRecentcustomers", (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
+  });
+
+  router.get("/customerCount", (req, res) => {
+    db.query("CALL customerCount", (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
+  });
 module.exports = router

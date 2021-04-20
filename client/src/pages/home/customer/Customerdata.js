@@ -20,7 +20,8 @@ export default function Customerdata() {
       <Title>Customer data</Title>
       <Table>
         <TR><TD style ={{width:"70%"}}>Customers eligible for covid vaccine, i.e., Age should be above <b>45</b>.</TD><TD><BUTTON to = '/covidList'>Continue</BUTTON></TD></TR>
-        <TR><TD style ={{width:"70%"}}>Select a option</TD><TD><BUTTON to = '/customerdata'>Continue</BUTTON></TD></TR>
+        <TR><TD style ={{width:"70%"}}>Recently joined customers</TD><TD><BUTTON to = '/recentcustomers'>Continue</BUTTON></TD></TR>
+        <TR><TD style ={{width:"70%"}}>Area wise customer count</TD><TD><BUTTON to = '/customercount'>Continue</BUTTON></TD></TR>
       </Table>
       <div className={classes.seeMore}>
         <Link color="primary" href ='/'onClick={(e) => {

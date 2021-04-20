@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class covidvaccine extends React.Component {
+export default class customercount extends React.Component {
 
   constructor(props) {
     super(props)
@@ -13,7 +13,7 @@ export default class covidvaccine extends React.Component {
 async componentDidMount() {
   this.setState({isLoading: true})
  
-  const response = await fetch("http://localhost:1300/searchcustomer/covidList")
+  const response = await fetch("http://localhost:1300/searchcustomer/customerCount")
 
   if(response.ok)
   {
@@ -30,14 +30,9 @@ async componentDidMount() {
   renderTableRows = () => {
     return this.state.users[0].map(user => {
       return (
-        <tr key={user.id}>
-          <td>{user.fname}</td>
-          <td>{user.lname}</td>
-          <td>{user.age}</td>
+        <tr>
           <td>{user.pincode}</td>
-          <td>{user.email}</td>
-          <td>{user.username}</td>
-          <td>{user.password}</td>
+          <td>{user.Frequency}</td>
         </tr>
       )
     })
@@ -61,8 +56,8 @@ renderTableHeader = () => {
     return users.length > 0
       ? (
         <div style={{display: 'flex', justifyContent: 'center'}}>
-        <table style={{border: "3px solid black",padding: "20px 16px"}}>
-          <caption style={{border: "3px solid black",padding: "20px 16px"}}><h1><b>CUSTOMERS ELIGIBLE FOR COVID VACCINE</b></h1>
+        <table style={{border: "3px solid black",padding: "20px 16px", width: "400px"}}>
+          <caption style={{border: "3px solid black",padding: "20px 16px"}}><h1><b>Area wise customer frequency list</b></h1>
           Total records : {users[0].length}</caption>
           <thead style={{backgroundColor: "#FF416C", border: "1px solid black", color: "white"}}>
             <tr style={{border: "1px solid black", padding: "10px 8px"}}>
