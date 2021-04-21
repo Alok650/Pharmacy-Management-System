@@ -22,6 +22,8 @@ import { mainListItems , Logout} from '../listItems';
   import {Content, Columnadd, Position} from '../customerStyle'
  import Searchbill from './Searchbill'
  import Deletebill from './Deletebill'
+import Billdata from './billdata'
+import Paper from '@material-ui/core/Paper';
 
 function Copyright() {
   return (
@@ -173,7 +175,12 @@ export default function Bills() {
                 <Medicinedata />
               </Paper>
             </Grid> */}
-            <Grid item xs={5} md={4} lg={4}>
+            <Grid item xs={12}>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <Billdata/>
+              </Paper>
+            </Grid>
              {/* Add Bill */}
               <Content>
              <Addbill/>

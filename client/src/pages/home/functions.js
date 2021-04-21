@@ -1,7 +1,7 @@
 import React from 'react'
-import Icon1 from './../info/images/svg-2.svg'
-import Icon2 from './../info/images/svg-7.svg'
-import Icon3 from './../info/images/svg-9.svg'
+import Icon1 from './../info/images/svg-1.svg'
+import Icon2 from './../info/images/svg-2.svg'
+import Icon3 from './../info/images/svg-3.svg'
 import {ServicesContainer, ServicesH1, ServicesWrapper, ServicesCard, ServicesIcon, ServicesH2, ServicesP} from './customerStyle'
 import {Link as LinkR} from 'react-router-dom'
 

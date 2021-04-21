@@ -13,6 +13,10 @@ import GetFulltable from './pages/home/customer/report/fullTable'
 import covidVaccine from './pages/home/customer/report/above45'
 import recentcustomers from './pages/home/customer/report/recentcustomers'
 import customercount from './pages/home/customer/report/customerCount'
+import Sorttrans from './pages/home/Bills/report/sortedtransaction'
+import Transtotal from './pages/home/Bills/report/sorttotalcost'
+import Transtoday from './pages/home/Bills/report/transactiontoday'
+import AllTransactions from './pages/home/Bills/report/fullTable'
 
 function App() {
   return (
@@ -34,6 +38,10 @@ function App() {
         <Route path = '/covidList' component={covidVaccine} exact />
         <Route path = '/recentcustomers' component={recentcustomers} exact />
         <Route path = '/customercount' component={customercount} exact />
+        <Route path = '/sorttransaction' component={Sorttrans} exact />
+        <Route path = '/transactiontotal' component={Transtotal} exact />
+        <Route path = '/transactiontoday' component={Transtoday} exact />
+        <Route path = '/alltransactions' component={AllTransactions} exact />
       </Switch>
     </Router>
   );

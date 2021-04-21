@@ -110,9 +110,9 @@ router.post("/insert/addmed", (req, res) => {
 
 
 //display all transacions from db
-router.post("/lookup/all", (req, res) => {
+router.get("/lookup/all", (req, res) => {
   
-  const sql_query="SELECT * FROM transaction";
+  const sql_query="CALL transaction_print_all";
 
   db.query(
     sql_query,
@@ -227,5 +227,33 @@ router.post("/insert/submit", (req, res) => {
 
 });
 
+router.get("/today", (req, res) => {
+  db.query("CALL transaction_print_today", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
 
+router.get("/date", (req, res) => {
+  db.query("CALL transaction_sort_date", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+router.get("/totalcost", (req, res) => {
+  db.query("CALL transaction_sort_totalcost", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
 module.exports = router;

@@ -168,12 +168,6 @@ export default function Medicine() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* All Medicines */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Medicinedata />
-              </Paper>
-            </Grid>
             <Grid item xs={5} md={4} lg={4}>
              {/* Add customer */}
              <Content>
