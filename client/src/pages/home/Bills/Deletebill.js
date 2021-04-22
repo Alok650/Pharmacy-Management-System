@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {FormWrap, FormH1del, FormContent, Form, FormInput, FormH1, FormLabel, FormButton} from '../customerStyle'
+import {FormWrap, FormH1delete, FormContent, Form, FormInput, FormLabel, FormButton} from '../customerStyle'
 import axios from 'axios'
 
 const Deletebill = () =>{
@@ -33,7 +33,7 @@ const Deletebill = () =>{
     <FormWrap>
        <FormContent>
          <Form>
-           <FormH1del>Delete Bill from database</FormH1del>
+           <FormH1delete>Delete Bill from database</FormH1delete>
            <FormLabel>Bill number</FormLabel>
              <FormInput type = 'number' required onChange ={(event) => {setbillno(event.target.value)}}/>
            <FormButton onClick = {delBill} >Delete</FormButton>

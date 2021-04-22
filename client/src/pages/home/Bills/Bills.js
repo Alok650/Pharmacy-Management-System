@@ -169,12 +169,6 @@ export default function Bills() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* All Medicines */}
-            {/* <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Medicinedata />
-              </Paper>
-            </Grid> */}
             <Grid item xs={12}>
             <Grid item xs={12}>
               <Paper className={classes.paper}>

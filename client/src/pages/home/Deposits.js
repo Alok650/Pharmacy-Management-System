@@ -1,9 +1,8 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
-
+import {Link as LinkR} from 'react-router-dom'
 function preventDefault(event) {
   event.preventDefault();
 }
@@ -26,9 +25,9 @@ export default function Deposits() {
         on 04 APRIL 2021
       </Typography>
       <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
+        <LinkR to = '/alltransactions' style = {{textDecoration:'none'}}>
           View transaction details
-        </Link>
+        </LinkR>
       </div>
     </React.Fragment>
   );

@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {FormWrap, FormH1del, FormContent, Form, FormInput, FormLabel, FormButton} from '../customerStyle'
+import {FormWrap, FormH1delete, FormContent, Form, FormInput, FormLabel, FormButton} from '../customerStyle'
 import axios from 'axios'
 
 const Deletemedicine = () =>{
@@ -32,7 +32,7 @@ const Deletemedicine = () =>{
     <FormWrap>
        <FormContent>
          <Form>
-           <FormH1del>Delete Medicine from stock</FormH1del>
+           <FormH1delete>Delete Medicine from stock</FormH1delete>
            <FormLabel>Medicine serial no.</FormLabel>
              <FormInput type = 'number' required onChange ={(event) => {setSr_no(event.target.value)}}/>
              <FormLabel>Reason</FormLabel>

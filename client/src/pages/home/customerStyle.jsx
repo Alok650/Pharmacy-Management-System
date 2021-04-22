@@ -182,6 +182,16 @@ export const FormH1del = styled.h1`
   font-weight: 400;
   text-align: center;
 `
+
+export const FormH1delete = styled.h1`
+  font-family: 'Encode Sans Expanded', sans-serif;
+  margin-top:15px;
+  margin-bottom:30px;
+  color: black;
+  font-size: 23px;
+  font-weight: 400;
+  text-align: center;
+`
 export const FormLabel = styled.label`
   font-family: 'Encode Sans Expanded', sans-serif;
   margin-bottom: 8px;
