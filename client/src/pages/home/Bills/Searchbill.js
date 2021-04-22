@@ -12,7 +12,7 @@ const Searchbill = () =>{
     })
       .then(res => {
         console.log(res);
-              if(res){
+              if(res.data){
                 var C_ID= res.data.C_ID;
                 var billdate= res.data.billdate;
                 var billno= res.data.billno;

@@ -165,8 +165,7 @@ router.post("/stock/search", (req, res) => {
         res.status(400).send("Encountered error, contact admin.");
       } 
        else {
-        if(!result[0].sr_no){
-          console.log("cha muda")
+        if(result==undefined){
          res.status(300).send("Not Found");
         }
       //   if(!result.sr_no)

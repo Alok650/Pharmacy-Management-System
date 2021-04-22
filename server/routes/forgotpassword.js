@@ -63,7 +63,7 @@ router.post("/reset", (req, res) => {
           res.status(400).send({'reset':0});
           console.log("Invalid data 2");
         } else {
-          if(!result[0])
+          if(result.length==0)
           {
             res.status(400).send({'reset':0});
             console.log(result);

@@ -95,10 +95,10 @@ const Addbill = () => {
         <FrmContent>
           <Formadd onsubmit = "redirectLog(e)">
             <FormH1add>Add new bill</FormH1add>
-            <FormInputadd type = 'number' placeholder = "Medicine serial no." required onChange ={(event) => {setSr_no(event.target.value)}}/>
+            <FormInputadd type = 'number' required placeholder = "Customer ID" onChange ={(event) => {setC_ID(event.target.value)}}/>
             <FormButtonadd onClick = {addBill}>Create new Bill</FormButtonadd> <br/>
-              <FormInputadd type = 'number' required placeholder = "Quantity" onChange ={(event) => {setquantity(event.target.value)}}/>
-              <FormInputadd type = 'number' required placeholder = "Customer ID" onChange ={(event) => {setC_ID(event.target.value)}}/>
+            <FormInputadd type = 'number' placeholder = "Medicine serial no." required onChange ={(event) => {setSr_no(event.target.value)}}/>
+            <FormInputadd type = 'number' required placeholder = "Quantity" onChange ={(event) => {setquantity(event.target.value)}}/>
             <FormButtonadd onClick = {addMed}>Add in cart</FormButtonadd> <br/>
             <FormButtonadd onClick = {subBill}>Submit</FormButtonadd> 
           </Formadd>

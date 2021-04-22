@@ -18,7 +18,6 @@ const ForgotPassword = () => {
       .then(res => {
               if(res.data.password===1){
                 console.log("success");
-                alert("Request successful")
                     axios.post('http://localhost:1300/forgotpassword/reset', {
                         email:email,
                         pincode: pincode,
@@ -26,7 +25,7 @@ const ForgotPassword = () => {
                         })
                         .then(res => {
                             if(res.data.reset===1){
-                              alert("Password reset successfully")
+                              alert("Password reset successful")
                         }
                           else
                             {
@@ -35,7 +34,6 @@ const ForgotPassword = () => {
                       })
                         .catch(error => {
                             console.log("we have an error in catch",error);
-                            alert("Unsuccessful! Try again.")
                       })}
               else
               {

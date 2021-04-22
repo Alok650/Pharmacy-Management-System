@@ -148,8 +148,9 @@ router.post("/seachBill", (req, res) => {
         res.status(400).send("Encountered error, contact admin.");
       } 
       else {
-        if(!result[0].billno)
-          res.status(300).send("Not Found");
+        console.log(result)
+        if(result==undefined)
+          res.status(400);
         else 
           res.send(result[0]);
       }
