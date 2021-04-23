@@ -48,8 +48,8 @@ const Addmedicine = () => {
               <FormInputadd type = 'text' placeholder = "Medicine name" required onChange ={(event) => {setMed_name(event.target.value)}}/>
               <FormInputadd type = 'number' required placeholder = "Quantity" onChange ={(event) => {setQty_left(event.target.value)}}/>
               <FormInputadd type = 'number' required placeholder = "Cost" onChange ={(event) => {setMed_cost(event.target.value)}}/>
-              <FormInputadd type = 'date' required placeholder = "Expiry date" onChange ={(event) => {setExp_date(event.target.value)}}/>
-              <FormInputadd type = 'date' required placeholder = "Mfg Date" onChange ={(event) => {setMfg_date(event.target.value)}}/>
+              <FormInputadd type = 'date' required title="Expiry date"  onChange ={(event) => {setExp_date(event.target.value)}}/>
+              <FormInputadd type = 'date' required title="Manufacturing Date"  onChange ={(event) => {setMfg_date(event.target.value)}}/>
               <FormInputadd type = 'text' required placeholder = "Rack Location" onChange ={(event) => {setRac_loc(event.target.value)}}/>
               <FormInputadd type = 'text' required placeholder = "Manufacturer" onChange ={(event) => {setMed_mfg(event.target.value)}}/>
             <FormButtonadd onClick = {addmed}>Continue</FormButtonadd> 

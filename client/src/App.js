@@ -17,6 +17,9 @@ import Sorttrans from './pages/home/Bills/report/sortedtransaction'
 import Transtotal from './pages/home/Bills/report/sorttotalcost'
 import Transtoday from './pages/home/Bills/report/transactiontoday'
 import AllTransactions from './pages/home/Bills/report/fullTable'
+import Getmedtable from './pages/home/Meds/report/fullTable'
+import Getqtytable from './pages/home/Meds/report/qtyTable'
+import GetshelfLife from './pages/home/Meds/report/shelfLife'
 
 function App() {
   return (
@@ -42,6 +45,9 @@ function App() {
         <Route path = '/transactiontotal' component={Transtotal} exact />
         <Route path = '/transactiontoday' component={Transtoday} exact />
         <Route path = '/alltransactions' component={AllTransactions} exact />
+        <Route path = '/stock/expirySort' component={Getmedtable} exact />
+        <Route path = '/stock/qtySort' component={Getqtytable} exact />
+        <Route path = '/stock/shelfLife' component={GetshelfLife} exact />
       </Switch>
     </Router>
   );

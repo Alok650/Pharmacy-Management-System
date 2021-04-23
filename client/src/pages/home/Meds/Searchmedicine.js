@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {FormWrap, FormContent, Form, FormInput, FormH1, FormLabel, FormButton} from '../customerStyle'
+import {FormWrap, FormH1del, FormContent, Form, FormInput, FormH1, FormLabel, FormButton} from '../customerStyle'
 import axios from 'axios'
 import Divider from '@material-ui/core/Divider';
 
@@ -79,12 +79,6 @@ const Searchmedicine = () => {
              <FormInput type = 'text' required onChange ={(event) => {setSr_no(event.target.value)}}/>
            <FormButton onClick = {Searchmedicin} >Search</FormButton>
            <Divider/>
-           {/* <FormH1del>Delete User</FormH1del>
-           <FormLabel>Sr_No</FormLabel>
-             <FormInput type = 'text' required onChange ={(event) => {setUsername(event.target.value)}}/>
-             <FormLabel>Reason</FormLabel>
-             <FormInput type = 'text' required/>
-           <FormButton onClick = {Deletecustomer} >Delete</FormButton> */}
          </Form>
        </FormContent>
      </FormWrap>

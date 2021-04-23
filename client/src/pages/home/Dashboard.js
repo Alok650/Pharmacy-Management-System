@@ -11,7 +11,6 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
-import Chart from './Chart';
 import Deposits from './Deposits';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Functions from './functions';
@@ -127,18 +126,12 @@ export default function Dashboard() {
             <Grid item xs={12}>
               <Functions/>
             </Grid>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
             {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} >
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+              <Deposits />
               </Paper>
-            </Grid>
+            </Grid>            
           </Grid>
           <Box pt={4}>
             <Copyright />

@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {FrmWrap, FrmContent, Frm, FrmInput, FrmH1,FrmButton} from '../customerStyle'
+import {FrmWrap, FrmContent, Frm, FrmInput, FrmH1,FrmButton, ExfrmInput} from '../customerStyle'
 import axios from 'axios'
 
 const Updatecustomer = () => {

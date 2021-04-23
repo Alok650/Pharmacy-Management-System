@@ -257,4 +257,15 @@ router.get("/totalcost", (req, res) => {
     }
   });
 });
+
+router.get("/todaytotal", (req, res) => {
+  db.query("CALL transaction_print_tot_today", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 module.exports = router;

@@ -27,18 +27,6 @@ router.post("/stock/insert", (req,response)=>{
     })
 })
 
-//add testing postman
-// {
-//     "med_name": "tes22t",
-//     "qty_left" :12,
-//     "med_cost":13,
-//     "exp_date":"2013-09-09",
-//     "med_mfg":"testmfg",
-//     "rac_loc":"top",
-//     "mfg_date":"2012-03-03"
-
-// }
-
 router.put("/stock/update", (req, response)=>{
     // const med_name = req.body.med_name;
      const sr_no = req.body.sr_no;
@@ -150,6 +138,7 @@ router.post("/stock/search", (req, res) => {
   const sr_no = req.body.sr_no;
   if(!sr_no)
   {
+    console.log(sr_no)
     res.status(400).send("Wrong medicine ID");
     return;
   }
@@ -161,24 +150,76 @@ router.post("/stock/search", (req, res) => {
     [sr_no],
     (err, result) => {
       if (err) {
-        console.log(err);
+        //console.log("hi"+err);
         res.status(400).send("Encountered error, contact admin.");
       } 
-       else {
-        if(result==undefined){
-         res.status(300).send("Not Found");
+      else {
+       // console.log("pagl"+sr_no)
+        console.log(result)
+        console.log(res[0])
+        if(result.length==0){
+          console.log(result[0])
+          console.log("cha muda")
+         //res.status(300).send("Not Found");
+         return;
         }
       //   if(!result.sr_no)
       //     {
       //       console.log(sr_no)
       //       res.status(404).send("Not Found");
       //     }  
-        else 
+        else {
+          console.log("hi")
           res.send(result);
-          return;
+          return;}
+
+    //   if(!result.affectedRows){
+    //     console.log(result.affectedRows)
+    //     res.status(404).send("Not found!");
+    //     // alert("Medicine not found");
+    //   }
+    //   else
+    //     res.send("Updated!");
+    //  //console.log(result.affectedRows + " record(s) updated");
+    //  return
       }
     }
   );
 });
+
+
+router.get("/stock/expirySort", (req, res) => {
+  db.query("SELECT * FROM med order by exp_date", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+
+router.get("/stock/qtySort", (req, res) => {
+  db.query("SELECT * from qty_sort", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+router.get("/stock/shelfLife", (req, res) => {
+  db.query("SELECT sr_no, med_name, shelf_life_year(mfg_date, exp_date) as shelf_life_year, shelf_life_month(mfg_date, exp_date) as shelf_life_month from med", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      //console.log(res)
+      res.send(result);
+    }
+  });
+});
+
+
 
 module.exports = router

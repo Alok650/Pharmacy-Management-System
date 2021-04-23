@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import {FormWrap, FormH1delete, FormContent, Form, FormInput, FormLabel, FormButton} from '../customerStyle'
+import {FormWrap, FormH1del, FormContent, Form, FormInput, FormH1, FormLabel, FormButton} from '../customerStyle'
 import axios from 'axios'
+import Divider from '@material-ui/core/Divider';
 
 const Deletemedicine = () =>{
     const [sr_no, setSr_no] = useState(0);
@@ -32,7 +33,7 @@ const Deletemedicine = () =>{
     <FormWrap>
        <FormContent>
          <Form>
-           <FormH1delete>Delete Medicine from stock</FormH1delete>
+           <FormH1del>Delete Medicine from stock</FormH1del>
            <FormLabel>Medicine serial no.</FormLabel>
              <FormInput type = 'number' required onChange ={(event) => {setSr_no(event.target.value)}}/>
              <FormLabel>Reason</FormLabel>
