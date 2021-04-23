@@ -56,4 +56,10 @@ git clone https://github.com/keshavga1209/Pharmacy_Management
 4. Open [localhost:3000](http://localhost:3000/) in the browser
 _NOTE: To run the Frontend side of the application it recommended to run the backend server too._
 
+## Contributors:
+1. Alok Prasad 
+2. Keshav Gautam
+3. Eshan Agarwal
+
+
 ---- 
