@@ -1,11 +1,9 @@
 Pharmacy_Management_System
 ## Tech Stack 🚀
-
-[![Made withReact](https://img.shields.io/badge/Made%20with-React-blue?style=for-the-badge&logo=React)]() 
-[![Made withExpress](https://img.shields.io/badge/Made%20with-Express-yellow?style=for-the-badge&logo=NodeJS)]() 
-[![Made withMySQL](https://img.shields.io/badge/Made%20with-MySQL-blue?style=for-the-badge&logo=MySQL)]()  
-[![Made withNode.js](https://img.shields.io/badge/Made%20with-Node.js-green?style=for-the-badge&logo=node.js)]()
-[![Made MUI](https://img.shields.io/badge/Made%20with-Material_Ui-orange?style=for-the-badge&logo=MaterialUi)]()  
+1. Frontend - React JS, Material UI
+2. Backend - Node JS, Express JS
+3. Database - MySQL
+4. Version control - GITHUB
   
 ## What you need to run this code
 1. Node (13.12.0)
