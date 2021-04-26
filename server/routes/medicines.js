@@ -28,7 +28,6 @@ router.post("/stock/insert", (req,response)=>{
 })
 
 router.put("/stock/update", (req, response)=>{
-    // const med_name = req.body.med_name;
      const sr_no = req.body.sr_no;
     const med_name = req.body.med_name
     const qty_left = req.body.qty_left
@@ -37,7 +36,6 @@ router.put("/stock/update", (req, response)=>{
     const med_mfg = req.body.med_mfg
     const rac_loc = req.body.rac_loc
     const mfg_date = req.body.mfg_date
-    //console.log(JSON.stringify(req.body, null, 4));
    console.log(med_name)
    console.log(sr_no)
     if(!sr_no || !med_name)
