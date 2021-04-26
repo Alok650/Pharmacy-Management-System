@@ -52,8 +52,7 @@ export default function Deposits() {
     <React.Fragment>
       <Title>Total sale amount</Title>
       <Typography component="p" variant="h4">
-        {/* Rs.{totalcost} */}
-        Rs.110000
+        Rs.{totalcost}
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
         on {getCurrentDate()}

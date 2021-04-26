@@ -58,42 +58,15 @@ router.put("/stock/update", (req, response)=>{
         else {
             if(!result.affectedRows){
               response.status(404).send("Not found!");
-              // alert("Medicine not found");
             }
             else
               response.send("Updated!");
-           //console.log(result.affectedRows + " record(s) updated");
            return
           }
       });
     // }
 })
 
-// router.post("/stock/delete2/:id",(req,res) => {
-    
-//   const sr_no = req.params.sr_no;
-//   if(!sr_no)
-//   {
-//     res.status(400).send("Wrong Serial number");
-//   }
-
-//   db.query(
-//     "DELETE FROM med where sr_no=?",
-//     [sr_no],
-//     (err, result) => {
-//       if (err) {
-//         console.log(err);
-//         res.status(400).send("Encountered error, contact admin.");
-//       } 
-//       else {
-//         if(!result.affectedRows)
-//           res.send("Not found!");
-//         else
-//           res.send(result);
-//       }
-//     }
-//   );
-// });
 
 
 
@@ -124,14 +97,6 @@ router.post("/stock/delete",(req,res) => {
     );
   });
 
-// router.get('/', (req,res)=>{
-//     //res.send('Hello World')
-//     // let sql = "SELECT * from tasks;"
-//     // let query = db.query(sql, (err, res)=>{
-//     //     res.render()
-//     // })
-//    // res.render('index')
-// })
 
 router.post("/stock/search", (req, res) => {
   
@@ -150,38 +115,20 @@ router.post("/stock/search", (req, res) => {
     [sr_no],
     (err, result) => {
       if (err) {
-        //console.log("hi"+err);
         res.status(400).send("Encountered error, contact admin.");
       } 
       else {
-       // console.log("pagl"+sr_no)
         console.log(result)
         console.log(res[0])
         if(result.length==0){
           console.log(result[0])
           console.log("cha muda")
-         //res.status(300).send("Not Found");
          return;
         }
-      //   if(!result.sr_no)
-      //     {
-      //       console.log(sr_no)
-      //       res.status(404).send("Not Found");
-      //     }  
         else {
           console.log("hi")
           res.send(result);
           return;}
-
-    //   if(!result.affectedRows){
-    //     console.log(result.affectedRows)
-    //     res.status(404).send("Not found!");
-    //     // alert("Medicine not found");
-    //   }
-    //   else
-    //     res.send("Updated!");
-    //  //console.log(result.affectedRows + " record(s) updated");
-    //  return
       }
     }
   );
@@ -214,7 +161,6 @@ router.get("/stock/shelfLife", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      //console.log(res)
       res.send(result);
     }
   });
