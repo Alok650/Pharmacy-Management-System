@@ -32,8 +32,9 @@ git clone https://github.com/keshavga1209/Pharmacy_Management
     nodemon to run development mode
     npm install
     ```
+3. edit db.js line n0. 6 by adding your mySQL password.
 
-2. Run the server
+4. Run the server
     ```
     npm run devStart
     ```
