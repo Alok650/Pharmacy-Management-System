@@ -21,11 +21,16 @@ const Addbill = () => {
         })
         // .then(res=> res.json())
         .then(data=>{
-          console.log(data);
+          if(data.status == 404)
+            alert("OUT OF STOCK!");
+          else{
           console.log("success");
+          console.log(data);
           alert("Added in cart!");
+          }
         })
         .catch(err=>{
+          alert("Error occured!");
             console.log("we have an error in catch",err);
         })
       }
