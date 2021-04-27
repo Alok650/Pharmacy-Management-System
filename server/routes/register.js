@@ -14,14 +14,7 @@ router.post("/create", (req, res) => {
     const email = req.body.email;
     const username = req.body.username;
     const password = req.body.password;
-
-    // if(!username || !password || !username || !age || !pincode || !email || !password)
-    // {
-    //   res.status(400).send({'login':0});
-    //   alert("Complete the registration")
-    //   return;
-    // }
-  
+    
     db.query(
       "INSERT INTO customer (fname, lname, age,pincode,email, username, password) VALUES (?,?,?,?,?,?,?)",
       [fname, lname, age,pincode, email, username, password],

@@ -186,28 +186,6 @@ router.post("/delete",(req,res) => {
   );
 });
 
-
-/*
-router.post("/test", (req, res) => {
-  
-  var C_ID=req.body.C_ID;
-  const sql_query="insert into transaction(C_ID) values (?)";
-  db.query(
-    sql_query,
-    [C_ID],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-        res.status(400).send("Encountered error, contact admin.");
-      } 
-      else {
-        console.log(result);
-        res.send(result);
-      }
-    }
-  );
-});
-*/
 router.post("/insert/submit", (req, res) => {
   
   const sql_query="select i.billno,totalcost,billdate,C_ID,i.sr_no,med_name,med_cost,quantity from transaction t,items i,med m where t.billno=i.billno and i.sr_no=m.sr_no and i.billno=(select billno from transaction ORDER BY billno DESC LIMIT 1)";
